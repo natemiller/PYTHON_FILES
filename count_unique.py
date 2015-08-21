@@ -1,25 +1,24 @@
 def count_unique(input):
-	count_a = 0
-	count_b = 0
-	count_c = 0
-	count_q = 0
+	dict = {}
+	dict['a'] = 0
+	dict['b'] = 0
+	dict['c'] = 0
+	dict['q'] = 0
 	
 	for i in input:
 		if(i == 'a'):
-			count_a += 1
+			dict['a'] += 1
 		elif (i == 'b'):
-			count_b += 1
+			dict['b'] += 1
 		elif(i == 'c'):
-			count_c += 1
+			dict['c'] += 1
 		elif(i == 'q'):
-			count_q += 1
+			dict['q'] += 1
 	
-	x = [count_a, count_b, count_c, count_q]
-	
-	print(x)
+	print sorted(dict.items(), key = lambda dict: dict[1], reverse=True)
 
 def main():
-	vec =['a','b','a','b','b','c','c','q','q']
+	vec = ['a','b','a','b','b','c','c','q','q']
 	count_unique(vec)
 
 
